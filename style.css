@@ -1,0 +1,58 @@
+/* Reset di base per evitare margini e padding strani */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Titolo */
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Etichetta + input + bottone in colonna */
+label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#output {
+  font-size: 18px;
+  color: #222;
+  font-weight: bold;
+}

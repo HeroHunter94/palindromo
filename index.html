@@ -1,0 +1,52 @@
+<!--Crear un archivo .js llamado cleanText.js donde se irán copiando las funciones genéricas que nos permitan limpiar textos de diferentes maneras.
+Agregar la función que Juan Pablo realizó para limpiar los textos y crear una función llamada limpiarTextos() que permita quitar de un texto acentos,
+ signos de puntuación y espacios en blanco
+Crear un programa que pida al usuario una frase y que determine si la misma es o no un palíndromo. En este enlace, al final de la hoja, tenéis un montón 
+de palíndromos para probar.
+Enlazar la librería cleanText.js antes del script específico del programa para limpiar el texto.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <h1>Palindrome checker</h1>
+    <label for = "input">Please enter the word: </label>
+    <input type = "text" id = "input" required>
+    <button type = "button" onclick = "wordChecker()">Check time</button>
+    <p id = "output"></p>
+
+    <script src = "cleanText.js"></script>
+    <script>
+        const INPUT = document.getElementById("input");
+        function wordChecker(){
+            let input = normalizarTexto(INPUT.value);
+            if (input == ""){
+                document.getElementById("output").innerHTML = "Please enter a word!";
+                return;
+            }
+            let length = input.length;
+            let palindromo = true;
+            for (let i = 0, j = length - 1; i < length && palindromo; i++, j--){
+                if (input.charAt(i) != input.charAt(j)){
+                    palindromo = false;
+                }
+            }
+            document.getElementById("output").innerHTML = `The word ${input} ${palindromo ? " is Palindromic" : " is not Palindromic"}`
+
+
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
